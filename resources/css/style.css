@@ -1,98 +1,87 @@
-/* rem basis ================================================================ */
-html
-{
-    font-size: 18px;
+/*
+ Project : Tortoiseshell Optics - @media queries practice
 
+link reference:
+
+/* image links: ../images/ */
+
+/* icon links: ../images/icons/
+
+*******************************************************************************/
+
+/* rem basis ================================================================ */
+
+html {
+    font-size: 18px;
     height: 100%;
 }
 
 /* Standard element styling ================================================= */
-body
-{
+
+body {
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1rem;
     line-height: 1.4rem;
-
-    position: relative;
-
     min-height: 100%;
     margin: 0;
     padding: 0;
-    padding-bottom: 9.5rem;
-
     color: black;
     background-color: white;
 }
 
-p
-{
+p {
     margin-top: 0;
     margin-bottom: 0;
 }
 
-h1
-{
+h1 {
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.2rem;
 }
 
-h2
-{
+h2 {
     font-size: 1rem;
     font-weight: bold;
-
     color: white;
 }
 
-
-/* image links: ../images/ */
-/* icon links: ../images/icons/ */
-
-#herocontainer
-{
+.herocontainer {
     display: flex;
-
     width: auto;
     height: 30rem;
     margin: 0 auto;
-
     background: url('../images/glasses-bg.png') center;
     background-size: cover;
-
     flex-flow: column wrap;
 }
 
-
+.sitewrap {
+    height: auto;
+    position: static;
+}
 
 /* Header ====================================================================*/
 
-header
-{
+header {
     display: flex;
-
     width: 53.3rem;
     /* 1rem = 18px | 53.3rem = 959.4px */
-    margin: 1rem auto 0 auto;
-
+    margin: 1rem auto 0;
     background-color: cadetblue;
-
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
 }
 
-.logo
-{
+.logo {
     display: flex;
-
     color: white;
-
-    justify-content: flex-start;
     align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
 }
 
-.logo img
-{
+.logo img {
     width: auto;
     max-height: 1.5rem;
     margin: 0 1rem 0 2rem;
@@ -100,144 +89,235 @@ header
 
 /* Navigation ================================================================*/
 
-nav
-{
+nav {
     display: inline-flex;
-
     padding: 1rem 2rem 1rem 0;
-
     justify-content: flex-end;
-    ;
 }
 
-nav a
-{
+nav a {
     margin: 0 2rem 0 0;
-
     text-decoration: none;
-
     color: white;
 }
 
-/* Minibanner ================================================================*/
-.container
-{
-    display: flex;
+/* @media navigation =========================================================*/
 
-    width: 53.3rem;
-    margin: 0 auto;
-
+.media {
+    display: none;
+    padding: 1rem 2rem 1rem 0;
     justify-content: flex-end;
 }
 
-.minibanner
-{
+/* Minibanner ================================================================*/
+
+.container {
+    display: flex;
+    width: 53.3rem;
+    margin: 0 auto;
+    justify-content: flex-end;
+}
+
+.minibanner {
     position: relative;
     right: -2rem;
-
-    margin: 10rem 0 0 0;
-    padding: 1.5rem 5rem 1.5rem 5rem;
-
+    margin: 10rem 0 0;
+    padding: 1.5rem 5rem;
     background-color: white;
-
     justify-content: flex-end;
 }
 
 /* Services ==================================================================*/
 
-#services
-{
+.services {
     display: flex;
-
     margin: 0 auto;
-
     justify-content: center;
 }
 
-.icons
-{
+.icons {
     display: flex;
     flex-direction: column;
-
     height: 8rem;
-    margin: 3rem 3rem;
-
+    margin: 3rem;
     text-align: center;
-
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
 }
 
-.icons img
-{
+.icons img {
     width: 5rem;
     height: auto;
-
     object-fit: contain;
 }
 
-.icons:first-child img
-{
+.icons:first-child img {
     width: 3.5rem;
     height: auto;
 }
 
 /* Products ==================================================================*/
 
-#products
-{
+.products {
     display: flex;
-
     justify-content: center;
+    margin: 0 0 5rem;
 }
 
-.info
-{
+.info {
     line-height: 1.5rem;
-
     width: 35%;
     margin: 0 2.5%;
 }
 
-.info h2
-{
+.info h2 {
     width: 10rem;
-    margin: 0 0 1rem 0;
-    padding: .5rem 0 .5rem 1.25rem;
-
+    margin: 0 0 1rem;
+    padding: 0.5rem 0 0.5rem 1.25rem;
     background-color: cadetblue;
 }
 
 /* Footer ====================================================================*/
 
-footer
-{
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
+footer {
+    position: relative;
+    margin: 0 auto;
     display: flex;
-
     width: 53.3rem;
-    margin: 5rem auto 0 auto;
-    padding: 4rem 0rem;
-
+    padding: 4rem 0;
     color: black;
     background-color: azure;
-
     align-items: center;
 }
 
-footer img
-{
+footer img {
     height: 1.5rem;
     margin: 0 1rem 0 4rem;
 }
 
 /*----------------------------------------------------------------------------*/
-/* @media ====================================================================*/
 
-@media only screen and (max-width: 1024px)
-{
+/* @media (1024px) ===========================================================*/
+@media only screen and (max-width: 1024px) {
+    .container,
+    footer,
+    header {
+        width: 100%;
+    }
+
+    .herocontainer {
+        height: 17rem;
+    }
+
+    header {
+        margin: 0 auto;
+    }
+
+    .minibanner {
+        position: relative;
+        right: 2rem;
+        margin: 5rem 0 0;
+        padding: 0.75rem 4rem;
+    }
+
+    .minibanner h1 {
+        font-size: 1.33rem;
+    }
+}
+
+/* @media (470px) ============================================================*/
+@media only screen and (max-width: 500px) {
+    .herocontainer {
+        background-position: 20%;
+        align-items: center;
+        flex-flow: column nowrap;
+    }
+
+    .logo span,
+    nav {
+        display: none;
+    }
+
+    .media {
+        display: inline-flex;
+        padding: 1rem 2rem 1rem 0;
+        justify-content: flex-end;
+    }
+
+    .container {
+        align-items: center;
+        justify-content: center;
+        flex-flow: column nowrap;
+        margin: 9rem 0 0;
+        width: 100%;
+        padding: 0;
+    }
+
+    .minibanner {
+        right: 0;
+        position: relative;
+        width: 100%;
+        white-space: nowrap;
+        margin: 0;
+        padding: 0;
+    }
+
+    .minibanner h1 {
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .services {
+        width: 100%;
+        margin: 3.77rem auto;
+        flex-flow: column wrap;
+    }
+
+    .icons {
+        white-space: pre;
+        margin: 1.54rem 0 0;
+    }
+
+    .icons p {
+        font-size: 0.77rem;
+    }
+
+    .products {
+        flex-flow: column wrap;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .info {
+        line-height: 1.5rem;
+        width: 100%;
+        margin: 0 0 1rem;
+    }
+
+    .info h2 {
+        width: 100%;
+        padding: 0.5rem 0;
+        text-align: center;
+    }
+
+    .info p {
+        font-size: 0.77rem;
+        margin: 0 0 4rem;
+    }
+
+    footer {
+        justify-content: center;
+        align-items: flex-end;
+        padding: 4rem 0 0;
+    }
+
+    footer img {
+        margin: 0 auto;
+    }
+
+    footer span {
+        display: none;
+    }
 }
